@@ -1,7 +1,6 @@
 /* 
 Author: Mark Flores
 Purpose: Creates a Bi-Material substrate with any angle. 
-
 Inputs: 
 W	- Width
 L	- Length
@@ -11,27 +10,29 @@ nply	- Number of Plies/Lamina
 tply	- Thickness of a Single Ply/Lamina
 Mesh: 
 lc_# 	- Characteristic Length of Edge/Point
-
 */
-
 // - - - - - - - - - - - - - - - - - - - - - - -
 // Inputs
 // - - - - - - - - - - - - - - - - - - - - - - -
+// - - - - Dimensions - - - - 
 W 	= 10; 		
 L 	= 30; 		
 T 	= 10; 		
-Theta 	= 0; 		
+Theta 	= 20; 
+// - - - - Composite - - - - 		
 nply =1; 	
-tply = T/nply; 	
+tply = T/nply; 
+// - - - - Mesh - - - - 	
 lc_S = 1; 	
-
 If (nply==1)
   nep = 5;
-  nep_A = nep; 	
+  nep_A = nep;
+  nn_A = 3; 		// Number of nodes - nn_A-1=Number of elements
 EndIf
 If (nply!=1)
   nep = 1; 
   nep_A = nply;	
+  nn_A = 4; 		// Does not do anything
 EndIf
 // - - - - - - - - - - - - - - - - - - - - - - -
 // Is There an Adhesive Layer?
@@ -126,12 +127,11 @@ For i In {0:(nply-1)}
     EndIf
   EndIf
 EndFor
-
 // - - - - - - - - - - - - - - - - - - - - - - -
 // Structured Mesh
 // - - - - - - - - - - - - - - - - - - - - - - -
 If (Adhesion == 1) 
-  Transfinite Line {l21, l23} = 3; 	// 20 elements
+  Transfinite Line {l21, l23} = nn_A; 
   Transfinite Surface {s21}; 
 EndIf
 // - - - - - - - - - - - - - - - - - - - - - - -
@@ -146,7 +146,6 @@ Field[1].YMax= x2+5;
 Field[1].YMin=-x2-5; 
 Field[1].ZMax= 20; 
 Field[1].ZMin=-20; 
-
 Background Field = 1; // Field 1 or Field 0 - no mesh refinement
 
 Recombine Surface "*";
