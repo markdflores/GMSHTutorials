@@ -66,7 +66,7 @@ EndFor
 //
 nply_fep=1; 
 nep_fep=nply; 
-tol=0.000; 
+tol=0.001; 
 For i In {0:(nply_fep-1)}
 	s = Sqrt(2)/2;
 	// Outer Rectangle
