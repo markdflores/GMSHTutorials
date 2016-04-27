@@ -29,19 +29,19 @@ nep =1; 		// number of elements in z for each ply
 // - - - - - - - - - - - - - - - - - - - - - - -
 // Start of Code - Edit at Own Risk
 // - - - - - - - - - - - - - - - - - - - - - - -
-x=W/2; y=L/2; z=T/2; lc=lc_S;
 For i In {0:(nply-1)}
-  p01[{i}]=newp; Point(p01[i]) = { x, y, z-tply*i, lc};
-  p02[{i}]=newp; Point(p02[i]) = {-x, y, z-tply*i, lc};	
-  p03[{i}]=newp; Point(p03[i]) = {-x,-y, z-tply*i, lc};	
-  p04[{i}]=newp; Point(p04[i]) = { x,-y, z-tply*i, lc};	
-  l01[{i}]=newl;  Line(l01[i]) = {p01[i],p02[i]};
-  l02[{i}]=newl;  Line(l02[i]) = {p02[i],p03[i]};
-  l03[{i}]=newl;  Line(l03[i]) = {p03[i],p04[i]};
-  l04[{i}]=newl;  Line(l04[i]) = {p04[i],p01[i]};
-  ll01[{i}]=newll; Line Loop(ll01[i]) = {l01[i],l02[i],l03[i],l04[i]}; 
-  s01[{i}]=news; Plane Surface(s01[i]) = {ll01[i]};
-  Extrude {0,0,-tply} {Surface{s01[i]}; Layers{nep}; Recombine;}
+x=W/2; y=L/2; z=T/2-tply*i; lc=lc_S;
+p01[{i}]=newp; Point(p01[i]) = { x, y, z, lc};
+p02[{i}]=newp; Point(p02[i]) = {-x, y, z, lc};	
+p03[{i}]=newp; Point(p03[i]) = {-x,-y, z, lc};	
+p04[{i}]=newp; Point(p04[i]) = { x,-y, z, lc};	
+l01[{i}]=newl;  Line(l01[i]) = {p01[i],p02[i]};
+l02[{i}]=newl;  Line(l02[i]) = {p02[i],p03[i]};
+l03[{i}]=newl;  Line(l03[i]) = {p03[i],p04[i]};
+l04[{i}]=newl;  Line(l04[i]) = {p04[i],p01[i]};
+ll01[{i}]=newll; Line Loop(ll01[i]) = {l01[i],l02[i],l03[i],l04[i]}; 
+s01[{i}]=news; Plane Surface(s01[i]) = {ll01[i]};
+Extrude {0,0,-tply} {Surface{s01[i]}; Layers{nep}; Recombine;}
 EndFor
 
 // - - - - - - - - - - - - - - - - - - - - - - -
