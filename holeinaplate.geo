@@ -53,6 +53,7 @@ fihws = 2; 	// 1) laminated composite 2) solid
 // - - - - - - - - - - - - - - - - - - - - - 
 s = Sqrt(2)/2;
 tol=0.00001; // tol gets rid of unknown surface problem.
+T_X = tply-tol;
 // 
 // - - - - Hole in a Plate
 //
@@ -81,7 +82,7 @@ l13[{i}]=newl;Circle(l13[i]) = {p13[i],p00[i],p14[i]};
 l14[{i}]=newl;Circle(l14[i]) = {p14[i],p00[i],p11[i]}; 
 ll11[{i}]=newll; Line Loop(ll11[i]) = {l11[i],l12[i],l13[i],l14[i]}; 
 s01[{i}]=news; Plane Surface(s01[i]) = {ll01[i],ll11[i]};
-Extrude {0,0,-tply+tol} { Surface{s01[i]}; Layers{nep}; Recombine;}
+Extrude {0,0,-T_X} { Surface{s01[i]}; Layers{nep}; Recombine;}
 EndFor			// End of Composite
 //
 // - - - - Fill in Hole in a Plate
