@@ -33,6 +33,8 @@ nep = 1; 		// number of elements in z for each ply
 // - - - - - - - - - - - - - - - - - - - - - 
 // Start of Code 
 // - - - - - - - - - - - - - - - - - - - - - 
+tol=0.00001; 
+T_X = tply-tol;		// Thickness Extruded
 For i In {0:(nply-1)}
 	sf = Sqrt(2);
 	// Outer Rectangle
@@ -60,7 +62,7 @@ For i In {0:(nply-1)}
 	ll11[{i}]=newll; Line Loop(ll11[i]) = {l11[i],l12[i],l13[i],l14[i]}; 
 
 	s01[{i}]=news; Plane Surface(s01[i]) = {ll01[i],ll11[i]};
-	Extrude {0,0,-tply} { Surface{s01[i]}; Layers{nep}; Recombine;}
+	Extrude {0,0,-T_X} { Surface{s01[i]}; Layers{nep}; Recombine;}
 EndFor
 
 Field[1] = Box; 
