@@ -188,7 +188,7 @@ l04[{i}]=newl; Line(l04[i]) = {p01[last],p02[last]};
 // - - - - Line Loop - - - -
 ll01[{i}]=newll; Line Loop(ll01[i]) = {-l01[i],l02[i],l03[i],-l04[i]}; 
 // - - - - Surface - - - -
-s01[{i}]=news; Plane Surface(s01[i]) = {ll01[i]};
+s01[{i}]=news; Ruled Surface(s01[i]) = {ll01[i]};
 // - - - - Volume - - - -
 Extrude {0,0,-T_X} {Surface{s01[i]}; Layers{nep}; Recombine;}
 EndFor
