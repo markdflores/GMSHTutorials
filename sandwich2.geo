@@ -23,7 +23,7 @@ W = 50; 		// mm
 L = 50; 		// mm
 T_c = 3; 		// mm composite
 T_f = 6; 		// mm foam core
-nply =3; 		// integer
+nply =10; 		// integer
 tply = T_c/nply; 	// mm 
 
 lc_S = 2; 		// element size = 1 (xy)
