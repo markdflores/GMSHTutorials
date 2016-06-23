@@ -29,4 +29,3 @@ Updates: 6/22/2016
 	singleLapjoint.geo
 	twoAngledBrackets.geo
 	unique-lapjoint.geo
-
