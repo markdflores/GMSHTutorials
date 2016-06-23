@@ -7,7 +7,7 @@ The primary objective of using GMSH is to create a discretized model of any surf
 
 Updates: 6/23/2016
 1) Deletion: fep-composites.geo, fep-solid-composites.geo, composite-hip.geo. 
-1.1) Reason: holeinaplate is a combination of both. 
+1.1) Reason: holeinaplate is a combination of all of them. 
 
 Updates: 6/22/2016
 1) Read Me file creation.
