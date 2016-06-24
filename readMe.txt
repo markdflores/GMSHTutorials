@@ -5,6 +5,10 @@ E-mail: markdflores@gmail.com
 Objective: 
 The primary objective of using GMSH is to create a discretized model of any surface or volume. However, there is a lot of difficulty in creating meshes that required a lot of coding. Many of the “.geo” files have simple geometries and some have more intensive coding. 
 
+Updates: 6/24/2016
+1) Additions: mode_I_crack.geo and wierzbicki.geo
+1.1) mode_I_crack.geo and wierzbicki.geo have not been tested for composites. The code is there to test it. Only solid isotropic elastic materials have been studied. 
+
 Updates: 6/23/2016
 1) Deletion: fep-composites.geo, fep-solid-composites.geo, composite-hip.geo. 
 1.1) Reason: holeinaplate is a combination of all of them. 
