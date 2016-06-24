@@ -8,6 +8,11 @@ The primary objective of using GMSH is to create a discretized model of any surf
 Updates: 6/24/2016
 1) Additions: mode_I_crack.geo and wierzbicki.geo
 1.1) mode_I_crack.geo and wierzbicki.geo have not been tested for composites. The code is there to test it. Only solid isotropic elastic materials have been studied. 
+2) dimpleInPlate.geo
+2.2) Problems
+-Prism elements - It doesn’t always produce hexahedral elements 
+-Each compound surface has a unique mesh. This poses a problem where node connectivity is required
+-There are no periodic boundary conditions for the surface. Although the front surface and the back surface have the same curvature. The mesh doesn’t line up. Period boundary conditions is still being worked through. 
 
 Updates: 6/23/2016
 1) Deletion: fep-composites.geo, fep-solid-composites.geo, composite-hip.geo. 
