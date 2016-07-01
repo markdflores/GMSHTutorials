@@ -5,6 +5,12 @@ E-mail: markdflores@gmail.com
 Objective: 
 The primary objective of using GMSH is to create a discretized model of any surface or volume. However, there is a lot of difficulty in creating meshes that required a lot of coding. Many of the “.geo” files have simple geometries and some have more intensive coding. 
 
+Updates: 7/1/2016
+1) Problems Encounter Ticket 00001 - For Loop Problem for Composite Composites
+1.1) Description. Currently for something like a holeinaplate.geo a tolerance has to be put to prevent surface reconstruction problems. Surface problems occur when you open file, which result in a bad mesh as well. There is a fix for this. Currently working on the files. 
+1.2) Fixing the “For” Loop. To identify the extruded bottom surface. Then use that surface to extrusion until the thickness of the composite is met. 
+1.3) Advancement for VTMS architecture.  
+
 Updates: 6/24/2016
 1) Additions: mode_I_crack.geo and wierzbicki.geo
 1.1) mode_I_crack.geo and wierzbicki.geo have not been tested for composites. The code is there to test it. Only solid isotropic elastic materials have been studied. 
