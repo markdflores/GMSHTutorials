@@ -30,7 +30,7 @@ lc_S = 1; 		// element size = 1 (xy)
 // - - - - - - - - - - - - - - - - - - - - - - -
 // Do you want a Structured Mesh in xy? 
 // - - - - - - - - - - - - - - - - - - - - - - -
-struct=0; 	// 1) Yes 2) No
+struct=0; 	// 1) Yes 
 nnX = 11; 	// Number of Nodes in X 
 nnY = 11; 	// Number of Nodes in Y
 // - - - - - - - - - - - - - - - - - - - - - - -
