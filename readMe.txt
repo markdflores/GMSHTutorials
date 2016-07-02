@@ -3,7 +3,16 @@ Author: Mark Flores
 E-mail: markdflores@gmail.com
 
 Objective: 
-The primary objective of using GMSH is to create a discretized model of any surface or volume. However, there is a lot of difficulty in creating meshes that required a lot of coding. Many of the “.geo” files have simple geometries and some have more intensive coding. 
+The primary objective of using GMSH is to create a discretized model of any surface or volume. However, there is a lot of difficulty in creating meshes that required a lot of coding. Many of the “.geo” files have simple geometries and some have more intensive coding. Most of the .geo files are imported into a VTMS software. The VTMS is a pre-processing tool part of a FEA software package that goes with BSAM. 
+
+Tutorial: 
+The best way to learn how gmsh creates a composite is to look at the compositeplate.geo. It takes a simple block and uses a “For” loop to create a composite for you. 
+
+Updates: 7/1/2016
+1) Modifications to compositeplate.geo (composite3.geo)
+1.1) Modified the extrusion For loop 
+1.2) Created a physical volume and physical surface to have better boundary conditions for the VTMS architecture. 
+1.3) Documentation 
 
 Updates: 7/1/2016
 1) Problems Encounter Ticket 00001 - For Loop Problem for Composite Composites
