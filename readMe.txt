@@ -8,6 +8,11 @@ The primary objective of using GMSH is to create a discretized model of any surf
 Tutorial: 
 The best way to learn how gmsh creates a composite is to look at the compositeplate.geo. It takes a simple block and uses a “For” loop to create a composite for you. 
 
+Updates: 7/5/2016
+1) Deleted arcan.geo and replaced arcanspecimen.geo. 
+1.1) Fixes surface creation issuess. 
+
+
 Updates: 7/1/2016
 1) Modifications to compositeplate.geo (composite3.geo)
 1.1) Modified the extrusion For loop 
