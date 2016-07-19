@@ -18,7 +18,7 @@ lc_# 	- Characteristic Length of Edge/Point
 // - - - - Dimensions - - - -
 W 	= 25.4; 	// mm	
 L 	= 31.75;  	// mm			
-T 	= 3.2; 		// mm
+T 	= 0.5333333; 		// mm
 L_1	= 3.175	;	// mm
 L_g	= L-2*L_1; 
 W_g 	= 6.35; 	// mm
@@ -28,7 +28,7 @@ W_pin   = 12.7; 	// mm
 L_pin 	= L_g;  	// mm	
 tol_pin = 0.000;	// mm	 
 // - - - - Composite - - - -
-nply =24; 		// integer
+nply =4; 		// integer
 tply = T/nply; 		// mm 
 // - - - - - - - - - - - - - - - - - - - - - - -
 // How many plies do you want? (asymmetric boundary conditions)
@@ -223,14 +223,10 @@ For i In {0:(nnHx-1)}
   // Boundary Conditions for Each Pin
   // - - - - - - - - - - - - - - - - - - - - - - -  
   v21[{i}] = newv; Physical Volume(v21[i])=numv[]; 
-  //Printf( " %g   "  , numv[2]);
-  If (l==0)
+  
   numsf[]={s201[l]};		// For Boundary Conditions Front
   numsb[]={numv[0]};		// For Boundary Conditions Back
-  Else
-  numsf[]={numsb[]};		// For Boundary Conditions Front
-  numsb[]={numv[0]};		// For Boundary Conditions Back
-  EndIf
+  //Printf( " %g, %g   "  , s201[l],numsb[]);
   bnd[]={numsf}; front_pin[{l}]=newreg; Physical Surface(front_pin[l])=bnd[];
   bnd[]={numsb};  back_pin[{l}]=newreg; Physical Surface(back_pin[l])=bnd[];
   bnd[]={numv[2]:numv[5]}; pin_conn[{l}]=newreg; Physical Surface(pin_conn[l])=bnd[]; 
